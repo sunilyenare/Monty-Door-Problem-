@@ -2,7 +2,7 @@ package com.simulation;
 
 import java.util.Random;
 
-public class TrailGenerator {
+public class TrialGenerator {
 
     private int randomNumberGenerrator() {
         return new Random().nextInt(3) + 1;

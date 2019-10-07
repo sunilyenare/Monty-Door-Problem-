@@ -2,10 +2,10 @@ package com.simulation;
 
 public class Simulation {
     private int numberOfTrial;
-    private TrailGenerator trailGenerator;
+    private TrialGenerator trailGenerator;
 
-    // TODO - Simulation is not parameterized on choice.
-    public Simulation(int numberOfTrial, TrailGenerator trailGenerator) {
+
+    public Simulation(int numberOfTrial, TrialGenerator trailGenerator) {
         this.numberOfTrial = numberOfTrial;
         this.trailGenerator = trailGenerator;
     }
