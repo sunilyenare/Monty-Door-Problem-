@@ -17,7 +17,7 @@ public class Simulation {
                count++;
             }
         }
-        return count * 1.0 / numberOfTrial;
+        return (double) Math.round(count * 1.0 / numberOfTrial * 100) / 100;
     }
 
 }

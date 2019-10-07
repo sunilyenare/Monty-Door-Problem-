@@ -3,38 +3,27 @@ package com.simulation;
 import java.util.Random;
 
 public class TrialGenerator {
-    private int randomNumber = randomNumberGenerate();
-    private boolean doorA = false;
-    private boolean doorB = false;
-    private boolean doorC = false;
 
-    private int randomNumberGenerate() {
+    private int randomNumberGenerrator() {
         return new Random().nextInt(3) + 1;
     }
 
 
     public Trial generate() {
-        if (isDoorA()) {
+        boolean doorA = false;
+        boolean doorB = false;
+        boolean doorC = false;
+
+        int randomNumber = randomNumberGenerrator();
+        if (randomNumber == 1) {
             doorA = true;
         }
-        if (isDoorB()) {
+        if (randomNumber == 2) {
             doorB = true;
         }
-        if (isDoorC()) {
-            doorC = true;
+        if (randomNumber == 3) {
+            doorA = true;
         }
         return new Trial(doorA, doorB, doorC, randomNumber);
-    }
-
-    private boolean isDoorC() {
-        return randomNumber == 3;
-    }
-
-    private boolean isDoorB() {
-        return randomNumber == 2;
-    }
-
-    private boolean isDoorA() {
-        return randomNumber == 1;
     }
 }
