@@ -2,10 +2,10 @@ package com.simulation;
 
 public class Simulation {
     private int numberOfTrial;
-    private TrialGenerator trailGenerator;
+    private TrialGenerate trailGenerator;
 
 
-    public Simulation(int numberOfTrial, TrialGenerator trailGenerator) {
+    public Simulation(int numberOfTrial, TrialGenerate trailGenerator) {
         this.numberOfTrial = numberOfTrial;
         this.trailGenerator = trailGenerator;
     }

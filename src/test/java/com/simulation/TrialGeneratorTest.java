@@ -5,6 +5,7 @@ import com.simulation.dummyclasses.DummyRandomNumberGenerate;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class TrialGeneratorTest {
 
@@ -18,7 +19,7 @@ public class TrialGeneratorTest {
 
     @Test
     void givenDoorA_whenGenerateRandomNumberOne_theyShouldReturnDoorA() {
-        TrialGenerator trialGenerator = new TrialGenerator(new DummyRandomNumberGenerate(1));
+        NeverSwapTrialGenerate trialGenerator = new NeverSwapTrialGenerate(new DummyRandomNumberGenerate(1));
 
         final Trial actual = trialGenerator.generate();
         Trial expected = new Trial(true, false, false, 1);
@@ -29,30 +30,33 @@ public class TrialGeneratorTest {
 
     @Test
     void givenDoorB_whenGenerateRandomNumberTwo_theyShouldReturnDoorB() {
-        TrialGenerator trialGenerator = new TrialGenerator(new DummyRandomNumberGenerate(2));
+        NeverSwapTrialGenerate trialGenerator = new NeverSwapTrialGenerate(new DummyRandomNumberGenerate(2));
         final Trial actual = trialGenerator.generate();
         Trial expected = new Trial(false, true, false, 2);
 
         assertEquals(expected.status(), actual.status());
 
     }
+
     @Test
     void givenDoorC_whenGenerateRandomNumberThree_theyShouldReturnDoorC() {
-        TrialGenerator trialGenerator = new TrialGenerator(new DummyRandomNumberGenerate(3));
+        NeverSwapTrialGenerate trialGenerator = new NeverSwapTrialGenerate(new DummyRandomNumberGenerate(3));
         final Trial actual = trialGenerator.generate();
         Trial expected = new Trial(false, false, true, 3);
 
         assertEquals(expected.status(), actual.status());
 
     }
+
+
     @Test
-    void givenPlayerChoiceOne_whenCheckForDoorA_thenReturnTrue() {
-        TrialGenerator trialGenerator = new TrialGenerator(new DummyRandomAlternating());
+    void givenDoorA_whenPlayerSelectTwo_thenReturnFalse() {
+        NeverSwapTrialGenerate trialGenerator = new NeverSwapTrialGenerate(new DummyRandomAlternating());
         final Trial actual = trialGenerator.generate();
 
         Trial expected = new Trial(true, false, false, 1);
 
-        assertEquals(expected.status(), actual.status());
+        assertNotEquals(expected.status(), actual.status());
     }
 
 }

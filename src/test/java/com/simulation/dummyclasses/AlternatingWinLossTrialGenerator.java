@@ -1,10 +1,10 @@
 package com.simulation.dummyclasses;
 
 import com.simulation.Trial;
-import com.simulation.TrialGenerator;
+import com.simulation.TrialGenerate;
 
 
-public class AlternatingWinLossTrialGenerator extends TrialGenerator {
+public class AlternatingWinLossTrialGenerator implements TrialGenerate {
 
     private boolean flag = true;
 

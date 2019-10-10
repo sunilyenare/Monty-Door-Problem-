@@ -1,13 +1,10 @@
 package com.simulation;
 
-import java.util.Random;
-
-
 
 public class MainClass {
 
     public static void main(String[] args) throws Throwable {
-      final Simulation simulation = new Simulation(10000, new TrialGenerator(new RandomNumber()));
+      final Simulation simulation = new Simulation(10000, new NeverSwapTrialGenerate(new RandomNumber()));
       System.out.println(simulation.calculateWinningProbability());
 
     }

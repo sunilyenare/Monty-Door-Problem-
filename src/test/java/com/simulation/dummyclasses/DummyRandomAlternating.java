@@ -4,15 +4,15 @@ import java.util.Random;
 
 public class DummyRandomAlternating extends Random {
 
-    boolean flag = false;
+    boolean flag = true;
 
     @Override
     public int nextInt() {
-        if(!flag) {
-            flag = true;
+        if(flag) {
+            flag = false;
             return 1;
         }
-        flag = false;
+        flag = true;
         return 2;
     }
 }

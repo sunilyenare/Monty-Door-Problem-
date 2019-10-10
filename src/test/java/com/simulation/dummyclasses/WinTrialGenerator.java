@@ -1,11 +1,10 @@
 package com.simulation.dummyclasses;
 
 import com.simulation.Trial;
-import com.simulation.TrialGenerator;
+import com.simulation.NeverSwapTrialGenerate;
+import com.simulation.TrialGenerate;
 
-import java.util.Random;
-
-public class WinTrialGenerator extends TrialGenerator {
+public class WinTrialGenerator implements TrialGenerate {
 
 
 
