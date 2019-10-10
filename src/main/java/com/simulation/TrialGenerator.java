@@ -1,25 +1,26 @@
 package com.simulation;
 
-import com.simulation.exception.DoorAException;
-import com.simulation.exception.DoorBException;
-import com.simulation.exception.DoorCException;
-
 import java.util.Random;
 
 public class TrialGenerator {
-    int flagDoorA=0;
-    int flagDoorB=0;
-    int flagDoorC=0;
-    private int randomNumberGenerator() {
-        return new Random().nextInt(3) + 1;
+    private Random random;
+
+    public TrialGenerator(Random random) {
+        this.random = random;
     }
 
-    public Trial generate() throws Throwable {
+    public TrialGenerator() {
+
+    }
+
+
+    public Trial generate() {
         boolean doorA = false;
         boolean doorB = false;
         boolean doorC = false;
 
-        int randomNumber = randomNumberGenerator();
+        int randomNumber = random.nextInt();
+
         if (randomNumber == 1) {
             doorA = true;
         }
@@ -30,42 +31,8 @@ public class TrialGenerator {
             doorC = true;
         }
 
-        if(doorA){
-            flagDoorA++;
-        }
-        if(doorB){
-            flagDoorB++;
-        }
-        if(doorC){
-            flagDoorC++;
-        }
-
-        doorAException();
-        doorBException();
-        doorCException();
-
-        return new Trial(doorA, doorB, doorC,randomNumberGenerator());
+        return new Trial(doorA, doorB, doorC, random.nextInt());
     }
 
-    public void doorCException() throws DoorCException {
-        if(flagDoorC==0)
-        {
-            throw new DoorCException();
-        }
-    }
-
-    public void doorBException() throws DoorBException {
-        if(flagDoorB==0)
-        {
-            throw new DoorBException();
-        }
-    }
-
-    public void doorAException() throws DoorAException {
-        if(flagDoorA==0)
-        {
-            throw new DoorAException();
-        }
-    }
 
 }

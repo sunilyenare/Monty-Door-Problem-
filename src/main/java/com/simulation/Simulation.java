@@ -13,8 +13,8 @@ public class Simulation {
     public double calculateWinningProbability() throws Throwable {
         int count = 0;
         for (int i = 0; i < numberOfTrial; i++) {
-         if (trailGenerator.generate().status()) {
-               count++;
+            if (trailGenerator.generate().status()) {
+                count++;
             }
         }
         return (double) Math.round(count * 1.0 / numberOfTrial * 100) / 100;

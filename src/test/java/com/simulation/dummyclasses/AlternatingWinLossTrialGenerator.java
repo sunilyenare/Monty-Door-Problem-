@@ -1,8 +1,18 @@
-package com.simulation;
+package com.simulation.dummyclasses;
 
-class AlternatingWinLossTrialGenerator extends TrialGenerator {
+import com.simulation.Trial;
+import com.simulation.TrialGenerator;
+
+
+public class AlternatingWinLossTrialGenerator extends TrialGenerator {
 
     private boolean flag = true;
+
+
+    public AlternatingWinLossTrialGenerator() {
+
+    }
+
 
     @Override
     public Trial generate() {

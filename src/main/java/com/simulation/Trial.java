@@ -9,7 +9,7 @@ public class Trial {
     private int choice;
 
     // TODO - too many parameters
-    public Trial(boolean doorA, boolean doorB, boolean doorC,int choice) {
+    public Trial(boolean doorA, boolean doorB, boolean doorC, int choice) {
         this.doorA = doorA;
         this.doorB = doorB;
         this.doorC = doorC;
@@ -29,5 +29,13 @@ public class Trial {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return "Trial{" +
+                "doorA=" + doorA +
+                ", doorB=" + doorB +
+                ", doorC=" + doorC +
+                ", choice=" + choice +
+                '}';
+    }
 }
