@@ -1,5 +1,5 @@
 package com.simulation;
 
-public interface TrialGenerate {
+public interface TrialGenerator {
     Trial generate();
 }

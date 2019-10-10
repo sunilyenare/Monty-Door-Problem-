@@ -1,12 +1,9 @@
 package com.simulation.dummyclasses;
 
 import com.simulation.Trial;
-import com.simulation.NeverSwapTrialGenerate;
-import com.simulation.TrialGenerate;
+import com.simulation.TrialGenerator;
 
-public class WinTrialGenerator implements TrialGenerate {
-
-
+public class WinTrialGenerator implements TrialGenerator {
 
 
     public WinTrialGenerator() {

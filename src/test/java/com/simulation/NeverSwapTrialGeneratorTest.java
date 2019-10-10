@@ -1,13 +1,12 @@
 package com.simulation;
 
-import com.simulation.dummyclasses.DummyRandomAlternating;
-import com.simulation.dummyclasses.DummyRandomNumberGenerate;
+import com.simulation.dummyclasses.DummyRandomGenerator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class TrialGeneratorTest {
+public class NeverSwapTrialGeneratorTest {
 
     /*
     1. If random number generator generates 1, then only DoorA should be true. The status should be true.
@@ -19,7 +18,7 @@ public class TrialGeneratorTest {
 
     @Test
     void givenDoorA_whenGenerateRandomNumberOne_theyShouldReturnDoorA() {
-        NeverSwapTrialGenerate trialGenerator = new NeverSwapTrialGenerate(new DummyRandomNumberGenerate(1));
+        NeverSwapTrialGenerator trialGenerator = new NeverSwapTrialGenerator(new DummyRandomGenerator(1));
 
         final Trial actual = trialGenerator.generate();
         Trial expected = new Trial(true, false, false, 1);
@@ -30,7 +29,7 @@ public class TrialGeneratorTest {
 
     @Test
     void givenDoorB_whenGenerateRandomNumberTwo_theyShouldReturnDoorB() {
-        NeverSwapTrialGenerate trialGenerator = new NeverSwapTrialGenerate(new DummyRandomNumberGenerate(2));
+        NeverSwapTrialGenerator trialGenerator = new NeverSwapTrialGenerator(new DummyRandomGenerator(2));
         final Trial actual = trialGenerator.generate();
         Trial expected = new Trial(false, true, false, 2);
 
@@ -40,7 +39,7 @@ public class TrialGeneratorTest {
 
     @Test
     void givenDoorC_whenGenerateRandomNumberThree_theyShouldReturnDoorC() {
-        NeverSwapTrialGenerate trialGenerator = new NeverSwapTrialGenerate(new DummyRandomNumberGenerate(3));
+        NeverSwapTrialGenerator trialGenerator = new NeverSwapTrialGenerator(new DummyRandomGenerator(3));
         final Trial actual = trialGenerator.generate();
         Trial expected = new Trial(false, false, true, 3);
 
@@ -51,7 +50,7 @@ public class TrialGeneratorTest {
 
     @Test
     void givenDoorA_whenPlayerSelectTwo_thenReturnFalse() {
-        NeverSwapTrialGenerate trialGenerator = new NeverSwapTrialGenerate(new DummyRandomAlternating());
+        NeverSwapTrialGenerator trialGenerator = new NeverSwapTrialGenerator(new DummyRandomGenerator(1,2));
         final Trial actual = trialGenerator.generate();
 
         Trial expected = new Trial(true, false, false, 1);

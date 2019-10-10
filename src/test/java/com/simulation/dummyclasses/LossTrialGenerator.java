@@ -1,11 +1,10 @@
 package com.simulation.dummyclasses;
 
 import com.simulation.Trial;
-import com.simulation.NeverSwapTrialGenerate;
-import com.simulation.TrialGenerate;
+import com.simulation.TrialGenerator;
 
 
-public class LossTrialGenerator implements TrialGenerate {
+public class LossTrialGenerator implements TrialGenerator {
 
     public LossTrialGenerator() {
 
