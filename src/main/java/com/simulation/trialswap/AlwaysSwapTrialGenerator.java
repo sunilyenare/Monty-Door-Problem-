@@ -1,4 +1,7 @@
-package com.simulation;
+package com.simulation.trialswap;
+
+import com.simulation.trial.Trial;
+import com.simulation.trial.TrialGenerator;
 
 import java.util.Random;
 
@@ -6,7 +9,7 @@ public class AlwaysSwapTrialGenerator implements TrialGenerator {
 
     private Random random;
 
-    AlwaysSwapTrialGenerator(Random random) {
+    public AlwaysSwapTrialGenerator(Random random) {
         this.random = random;
     }
 

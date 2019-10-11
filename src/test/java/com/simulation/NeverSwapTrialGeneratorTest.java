@@ -1,6 +1,8 @@
 package com.simulation;
 
 import com.simulation.dummyclasses.DummyRandomGenerator;
+import com.simulation.trial.Trial;
+import com.simulation.trialswap.NeverSwapTrialGenerator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

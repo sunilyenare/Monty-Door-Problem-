@@ -1,4 +1,7 @@
-package com.simulation;
+package com.simulation.trialswap;
+
+import com.simulation.trial.Trial;
+import com.simulation.trial.TrialGenerator;
 
 import java.util.Random;
 

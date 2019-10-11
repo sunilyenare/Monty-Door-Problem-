@@ -1,7 +1,7 @@
 package com.simulation.dummyclasses;
 
-import com.simulation.Trial;
-import com.simulation.TrialGenerator;
+import com.simulation.trial.Trial;
+import com.simulation.trial.TrialGenerator;
 
 
 public class AlternatingWinLossTrialGenerator implements TrialGenerator {
@@ -17,7 +17,7 @@ public class AlternatingWinLossTrialGenerator implements TrialGenerator {
     public Trial generate() {
 
         if (flag) {
-            flag = false;
+                 flag = false;
             return new Trial(true, false, false, 1);
         }
         flag = true;

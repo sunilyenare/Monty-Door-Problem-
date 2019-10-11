@@ -1,5 +1,7 @@
 package com.simulation;
 
+import com.simulation.trial.TrialGenerator;
+
 public class Simulation {
     private int numberOfTrial;
     private TrialGenerator trailGenerator;

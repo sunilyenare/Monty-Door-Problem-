@@ -1,4 +1,4 @@
-package com.simulation;
+package com.simulation.trial;
 
 public class Trial {
 
@@ -16,7 +16,7 @@ public class Trial {
         this.choice = choice;
     }
 
-    boolean status() {
+    public boolean status() {
         switch (choice) {
             case 1:
                 return doorA;

@@ -7,11 +7,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+public class RandomSwapTrialGeneratorTest {
 
-public class AlwaysSwapTrialGeneratorTest {
+    /*
+      if player randomly select door 1 and host open 3 then return door A
+     */
 
     @Test
-    void givenPlayerNewChoiceIsOneAndHostOpenThree_whenPlayerSwapChoice_thenShouldReturnDoorA() {
+    void givenPlayerRandomChoiceIsOneAndHostOpenThree_whenPlayerRandomlySwapChoice_thenShouldReturnDoorA() {
         AlwaysSwapTrialGenerator alwaysSwapTrialGenerator = new AlwaysSwapTrialGenerator(new DummyRandomGenerator(1, 2, 3, 1));
         final Trial actual = alwaysSwapTrialGenerator.generate();
 

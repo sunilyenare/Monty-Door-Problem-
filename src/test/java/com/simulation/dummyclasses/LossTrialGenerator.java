@@ -1,7 +1,7 @@
 package com.simulation.dummyclasses;
 
-import com.simulation.Trial;
-import com.simulation.TrialGenerator;
+import com.simulation.trial.Trial;
+import com.simulation.trial.TrialGenerator;
 
 
 public class LossTrialGenerator implements TrialGenerator {
