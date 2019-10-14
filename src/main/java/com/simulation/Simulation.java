@@ -13,12 +13,16 @@ public class Simulation {
     }
 
     public double calculateWinningProbability() {
-        int count = 0;
+        int win = 0;
         for (int i = 0; i < numberOfTrial; i++) {
             if (trailGenerator.generate().status()) {
-                count++;
+                win++;
             }
         }
+        return getProbability(win);
+    }
+
+    private double getProbability(int count) {
         return (double) Math.round(count * 1.0 / numberOfTrial * 100) / 100;
     }
 

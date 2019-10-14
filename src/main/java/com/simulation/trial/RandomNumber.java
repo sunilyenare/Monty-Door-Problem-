@@ -1,4 +1,4 @@
-package com.simulation;
+package com.simulation.trial;
 
 import java.util.Random;
 

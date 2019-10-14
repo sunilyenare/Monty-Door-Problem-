@@ -1,6 +1,7 @@
 package com.simulation;
 
 
+import com.simulation.trial.RandomNumber;
 import com.simulation.trialswap.AlwaysSwapTrialGenerator;
 import com.simulation.trialswap.NeverSwapTrialGenerator;
 import com.simulation.trialswap.RandomSwapTrialGenerator;

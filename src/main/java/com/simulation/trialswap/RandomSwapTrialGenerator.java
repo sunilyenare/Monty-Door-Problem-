@@ -5,7 +5,7 @@ import com.simulation.trial.TrialGenerator;
 
 import java.util.Random;
 
-public class RandomSwapTrialGenerator implements TrialGenerator {
+public class RandomSwapTrialGenerator extends  ChoiceGenerator implements TrialGenerator {
 
     private Random random;
 
@@ -29,15 +29,13 @@ public class RandomSwapTrialGenerator implements TrialGenerator {
         int userChoice = random.nextInt();
         int randomChoice;
 
-        do {
-            hostChoice = random.nextInt();
-        } while (hostChoice == userChoice || hostChoice == doorWithPrize);
+        hostChoice = getHostChoice(doorWithPrize, userChoice,random);
 
-        do {
-            randomChoice = random.nextInt();
-        } while ( randomChoice == hostChoice);
+        randomChoice = getRandomChoice(hostChoice,random);
 
         return new Trial(doorA, doorB, doorC, randomChoice);
     }
+
+
 
 }
